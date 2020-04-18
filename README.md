@@ -34,7 +34,7 @@ So, this project uses a library that allows the ESP32-01s receive commands from 
 Universal Telegram Bot: https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot
 
 1. You need to install the library Telegram Bot Library in the Arduino IDE.
-2. Downgrade your Json installation in the Arduino IDE Library (See  notes in code). This is because the Telegram Bot Library doesnt works  with any 6.x version. (Select v5.13.5).
+2. Downgrade your Json installation in the Arduino IDE Library (See  notes in code). This is because the Telegram Bot Library doesn't works  with any 6.x version. (Select v5.13.5).
 3. Go to Telegram and add BotFather (https://telegram.me/botfather).
 4. Create your bot using the command "/newbot3.2".
    It will ask you new bot name.
@@ -55,9 +55,9 @@ Power supply (3.3v)<br>
 
 The code is based on "Control an LED strip using Inline Keyboard on Telegram" by Brian Lough.
 
-You can find my modiicated code here: https://github.com/rafael1138/officecalbot
+You can find my modified code here: https://github.com/rafael1138/officecalbot
 
-***Note: You need to know how to setup and upload the code to the esp-01s. There is a lot of tutorials about this.
+***Note: You need to know how to setup and upload the code to the esp32-01s. There is a lot of tutorials about this.
 
 ### iv. ***Operation***:
 
