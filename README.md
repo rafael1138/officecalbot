@@ -1,98 +1,96 @@
-# Dad's on a Call - Arduino Esp01 + Telegram
+# Dad is on a Call - Arduino Esp32-01s + Telegram
 
-​              ![img](https://www.redditstatic.com/desktop2x/img/renderTimingPixel.png)            
+![Dad is on a Call - ESP-01s + Telegram](C:\Users\Rafael\AppData\Local\Microsoft\Windows\INetCache\IE\5ACB99J6\HVI9Z1j[1].jpg)
 
-[![Post image](https://preview.redd.it/b93ib487p4t41.jpg?width=1810&format=pjpg&auto=webp&s=61a39e5904a99d2ce587fb24663aa016ffd1c5a3)](https://preview.redd.it/b93ib487p4t41.jpg?width=1810&format=pjpg&auto=webp&s=61a39e5904a99d2ce587fb24663aa016ffd1c5a3)
-
-Breadboard Setup
-
-
-
-i. ***GENERAL:***
+### i.General:
 
 This is a pretty nice project.
 
-The original idea came from Steve Forde:
+The original idea came from Steve Forde, who He a status sign to let his family know when he is in a work call.
 
-https://twitter.com/cairn4/status/1245539977993355265
+![](https://i.imgur.com/3D8hOCW.png)
 
+<center>https://twitter.com/cairn4/status/1245539977993355265</center>
 
-
-He created a status board to let his family know when he is in a work call.
-
-
-
-ii. ***SPECS & Parts***:
+### ii. **Specs & Parts**:
 
 He worked with a ESP8266, my version works with a ESP-01s and this is the prototype version:
 
+![](https://i.imgur.com/9ucytie.png)
 
+![Dad is on a Call - ESP-01s + Telegram](C:\Users\Rafael\AppData\Local\Microsoft\Windows\INetCache\IE\5ACB99J6\HVI9Z1j[1].jpg)
 
-[![Post image](https://preview.redd.it/gzcrewrsh4t41.png?width=562&format=png&auto=webp&s=11244f498c30ab97e8c11ab1f486da53d3757088)](https://preview.redd.it/gzcrewrsh4t41.png?width=562&format=png&auto=webp&s=11244f498c30ab97e8c11ab1f486da53d3757088)
+##### ESP-01S Connections:
 
-ESP-01S Connections. Remember VCC = 3.3v
+Vcc --> 3.3v. (Do not use 5v!!!!!!)
+Gnd --> Ground.
+CHPD --> Vcc.
+GP0 --> 10k Resistor --> Vcc & GP0 --> 220 Resistor --> Led --> Ground.
+GP2 --> 220 Resistor --> Led --> Ground.
 
-So, this project uses a library that allows the ESP-01s receives commands from Telegram:Universal Telegram Bot: https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot
+##### Ardino IDE Libraries & Bot Setup:
 
-The Parts are:
+So, this project uses a library that allows the ESP32-01s receive commands from Telegram:
+Universal Telegram Bot: https://github.com/witnessmenow/Universal-Arduino-Telegram-Bot
 
-1 ESP-01s.2 Leds.3 Resistors (2 * 220ohms - 1 * 10k ohms)1 Breadboard.A lot of jumpers.
+1. You need to install the library Telegram Bot Library in the Arduino IDE.
+2. Downgrade your Json installation in the Arduino IDE Library (See  notes in code). This is because the Telegram Bot Library doesnt works  with any 6.x version. (Select v5.13.5).
+3. Go to Telegram and add BotFather (https://telegram.me/botfather).
+4. Create your bot using the command "/newbot3.2".
+   It will ask you new bot name.
+   It will  ask for a username that ends with "bot".
+   It will show you your unique  Token. (This need to be paste it in the code).
+   Save all this info.
 
-iii. ***The CODE***:
+##### The required parts are:
+
+1 ESP32-01S. (or similar)
+2 Leds
+3 Resistors (2x220ohms - 1x10k ohms)
+1 Breadboard.
+Jumper cables.
+Power supply (3.3v)
+
+### iii. ***The CODE***:
 
 The code is based on "Control an LED strip using Inline Keyboard on Telegram" by Brian Lough.
 
-You can find it here: https://github.com/rafael1138/officecalbot
+You can find my modiicated code here: https://github.com/rafael1138/officecalbot
 
-***Note: You need to know how to setup and upload the code to the esp-01s. There is a lot of tutorials about his.
+***Note: You need to know how to setup and upload the code to the esp-01s. There is a lot of tutorials about this.
 
+### iv. ***Operation***:
 
+Turn on your ESP32-01s and go to Telegram and type in your bot:
 
-iv. ***Instructions for Telegram Bot:***
+/start (This is for the first time connection)
 
-I'm going to give you a really tiny & fast explanation but you can follow this an will works pretty nice: https://steemit.com/utopian-io/@drencolha/making-a-telegram-chat-bot-with-the-telegrambot-arduino-library-and-esp8266-wifi-module-tutorial
+/options --> You should see the available options:
 
-
-
-1. You need to install the library Telegram Bot Library in the Arduino IDE :
-
-
-
-[![Post image](https://preview.redd.it/pr6gp76jm4t41.png?width=640&format=png&auto=webp&s=c3f77d979e2ec0b693ac1cd2b7373d4a0d7d4ce3)](https://preview.redd.it/pr6gp76jm4t41.png?width=640&format=png&auto=webp&s=c3f77d979e2ec0b693ac1cd2b7373d4a0d7d4ce3)
-
-Use the zip file from the above link.
-
-\2. You need to Downgrade your Json installation in the Arduino IDE (See  notes in code). This is because the Telegram Bot Library doesnt works  with any 6.x version.
-
-\3. Go to telegram and add BotFather (https://telegram.me/botfather) and:
-
-3.1 Create your bot: /newbot3.2 It will ask you new bot name.3.3 It will  ask for a username that ends with "bot"3.4 It will show you your unique  Token. (This need to be paste it in the code)
-
-Save all this info.
-
-v. ***Operation***:
-
-Turn on your ESP-01s and go to Telegram and type in your bot:
-
-/start --> after you get the answer type --> /options
-
-You should see something like this:
+![](https://i.imgur.com/NCSaWh2.gif)
 
 
 
-[![Post image](https://preview.redd.it/qejowjh3p4t41.jpg?width=701&format=pjpg&auto=webp&s=f6a68e2c97daf4421d40da321c5f96e2d1650095)](https://preview.redd.it/qejowjh3p4t41.jpg?width=701&format=pjpg&auto=webp&s=f6a68e2c97daf4421d40da321c5f96e2d1650095)
+Now you are ready to go. the commands are:
 
-This is the Menu with available commands.
+On = Turn on pin (led) GP02.
+Off = Turn off pin (led) GP02.
+BT = Turn on pin (led) GP0.
+BTOFF = Turn of pin (led) GP0.
+ALLOFF = Turn of both pins (Leds).
+10/20/30mins = Turn on pin (led) GP02 during that time.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o5JdhVkOapg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+With all leds off this is the consumption:
+
+<img src="https://i.imgur.com/3UGhCR6.jpg" style="zoom: 7%;" />
+
+With all leds on:
+
+<img src="https://i.imgur.com/9f7lBsJ.jpg" style="zoom:7%;" />
 
 
-
-Demo. (Sorry for the bad quality)
-
-
-
-[![Post image](https://preview.redd.it/aixief6ir4t41.jpg?width=960&format=pjpg&auto=webp&s=8019784e79d0b6ac5fa995fe2ad10cf0866174e3)](https://preview.redd.it/aixief6ir4t41.jpg?width=960&format=pjpg&auto=webp&s=8019784e79d0b6ac5fa995fe2ad10cf0866174e3)
-
-3.3v - 73 mA for the 2 leds.
 
 After this, you should put it in a frame like Steve Forde did.
 
