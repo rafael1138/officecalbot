@@ -22,11 +22,11 @@ He worked with a ESP8266, my version works with a ESP-01s and this is the protot
 
 ##### ESP-01S Connections:
 
-Vcc --> 3.3v. (Do not use 5v!!!!!!)
-Gnd --> Ground.
-CHPD --> Vcc.
-GP0 --> 10k Resistor --> Vcc & GP0 --> 220 Resistor --> Led --> Ground.
-GP2 --> 220 Resistor --> Led --> Ground.
+Vcc --> 3.3v. (Do not use 5v!!!!!!)<br>
+Gnd --> Ground.<br>
+CHPD --> Vcc.<br>
+GP0 --> 10k Resistor --> Vcc & GP0 --> 220 Resistor --> Led --> Ground.<br>
+GP2 --> 220 Resistor --> Led --> Ground.<br>
 
 ##### Ardino IDE Libraries & Bot Setup:
 
@@ -44,12 +44,12 @@ Universal Telegram Bot: https://github.com/witnessmenow/Universal-Arduino-Telegr
 
 ##### The required parts are:
 
-1 ESP32-01S. (or similar)
-2 Leds
-3 Resistors (2x220ohms - 1x10k ohms)
-1 Breadboard.
-Jumper cables.
-Power supply (3.3v)
+1 ESP32-01S. (or similar)<br>
+2 Leds<br>
+3 Resistors (2x220ohms - 1x10k ohms)<br>
+1 Breadboard.<br>
+Jumper cables.<br>
+Power supply (3.3v)<br>
 
 ### iii. ***The CODE***:
 
@@ -69,8 +69,6 @@ Turn on your ESP32-01s and go to Telegram and type in your bot:
 
 ![](https://i.imgur.com/NCSaWh2.gif)
 
-
-
 Now you are ready to go. the commands are:
 
 On = Turn on pin (led) GP02.
@@ -80,7 +78,7 @@ BTOFF = Turn of pin (led) GP0.
 ALLOFF = Turn of both pins (Leds).
 10/20/30mins = Turn on pin (led) GP02 during that time.
 
-[![YouTube: Demo Video](https://i.ytimg.com/vi/o5JdhVkOapg/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBDYC2pocfPmyNmxmEl7GLVOxtuRg)](https://www.youtube.com/watch?v=o5JdhVkOapg "Demo Esp32-01s + Telegram")
+[![YouTube: Demo Video](https://i.ytimg.com/vi/o5JdhVkOapg/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBDYC2pocfPmyNmxmEl7GLVOxtuRg)](https://www.youtube.com/watch?v=o5JdhVkOapg "Demo Esp32-01s + Telegram") Demo Video
 
 With all leds off this is the consumption:
 
