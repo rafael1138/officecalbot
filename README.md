@@ -36,7 +36,7 @@ Universal Telegram Bot: https://github.com/witnessmenow/Universal-Arduino-Telegr
 1. You need to install the library Telegram Bot Library in the Arduino IDE.
 2. Downgrade your Json installation in the Arduino IDE Library (See  notes in code). This is because the Telegram Bot Library doesn't works  with any 6.x version. (Select v5.13.5).
 3. Go to Telegram and add BotFather (https://telegram.me/botfather).
-4. Create your bot using the command "/newbot3.2".
+4. Create your bot using the command "/newbot".
    It will ask you new bot name.
    It will  ask for a username that ends with "bot".
    It will show you your unique  Token. (This need to be paste it in the code).
